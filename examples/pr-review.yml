@@ -1,0 +1,39 @@
+# Copy this file to .github/workflows/pr-review.yml
+# The action reads the diff from the GitHub API. Checkout is only required
+# when `guidelines` points at a file in the repository. Delete that input
+# if you do not want extra review rules. Publish a release tag before
+# depending on @v1, or pin `uses` to a commit SHA.
+
+name: AI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hjsvieira98/ai-pr-reviewer@v1
+        with:
+          provider: openai
+          model: gpt-4o-mini
+          api-key: ${{ secrets.OPENAI_API_KEY }}
+          github-token: ${{ github.token }}
+          severity-threshold: medium
+          max-files: "20"
+          include: "**/*.{ts,tsx,js,jsx}"
+          exclude: "**/dist/**,**/*.lock"
+          guidelines: examples/review-guidelines.md
+          max-input-tokens: "12000"
+          max-comments: "15"
