@@ -1,0 +1,6 @@
+{
+  "seeded": 6,
+  "caught": 5,
+  "missedIds": ["nested-conditionals"],
+  "cleanFalsePositives": 1
+}

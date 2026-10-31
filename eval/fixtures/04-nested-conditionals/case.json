@@ -1,0 +1,12 @@
+{
+  "id": "04-nested-conditionals",
+  "title": "Nested conditionals that optional chaining would flatten",
+  "seeds": [
+    {
+      "id": "nested-conditionals",
+      "file": "src/settings.ts",
+      "category": "readability",
+      "line": 5
+    }
+  ]
+}

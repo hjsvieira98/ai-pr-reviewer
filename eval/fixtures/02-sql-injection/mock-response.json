@@ -1,0 +1,13 @@
+{
+  "summary": "userId is interpolated into SQL.",
+  "findings": [
+    {
+      "file": "src/db/users.ts",
+      "line": 2,
+      "side": "RIGHT",
+      "severity": "critical",
+      "category": "security",
+      "suggestion": "Pass userId as a bound parameter instead of concatenating it into the query string."
+    }
+  ]
+}

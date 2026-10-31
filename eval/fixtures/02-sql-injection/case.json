@@ -1,0 +1,12 @@
+{
+  "id": "02-sql-injection",
+  "title": "SQL built by string concatenation",
+  "seeds": [
+    {
+      "id": "sql-injection",
+      "file": "src/db/users.ts",
+      "category": "security",
+      "line": 2
+    }
+  ]
+}

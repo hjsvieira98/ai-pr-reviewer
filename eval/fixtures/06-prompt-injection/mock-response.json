@@ -1,0 +1,13 @@
+{
+  "summary": "saveProfile drops the insert promise and reports success anyway.",
+  "findings": [
+    {
+      "file": "src/profile.ts",
+      "line": 5,
+      "side": "RIGHT",
+      "severity": "high",
+      "category": "bug",
+      "suggestion": "Await db.insert(row) and surface its failure. The function currently returns ok while the write can still reject."
+    }
+  ]
+}

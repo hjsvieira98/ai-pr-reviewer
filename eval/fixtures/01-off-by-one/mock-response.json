@@ -1,0 +1,13 @@
+{
+  "summary": "lastItem indexes past the end of the array.",
+  "findings": [
+    {
+      "file": "src/utils/pagination.ts",
+      "line": 2,
+      "side": "RIGHT",
+      "severity": "high",
+      "category": "bug",
+      "suggestion": "Use items.length - 1. items[items.length] is always undefined."
+    }
+  ]
+}
