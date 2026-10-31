@@ -1,0 +1,13 @@
+{
+  "summary": "Orders are loaded with one query per user.",
+  "findings": [
+    {
+      "file": "src/db/orders.ts",
+      "line": 6,
+      "side": "RIGHT",
+      "severity": "high",
+      "category": "performance",
+      "suggestion": "Load the orders with one query that filters on the full id list instead of awaiting a query inside the loop."
+    }
+  ]
+}

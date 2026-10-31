@@ -1,0 +1,10 @@
+diff --git a/tests/email.test.ts b/tests/email.test.ts
+index 6666666..7777777 100644
+--- a/tests/email.test.ts
++++ b/tests/email.test.ts
+@@ -1,4 +1,5 @@
+ import { validateEmail } from "../src/email";
+ 
+ test("rejects an empty email", () => {
++  validateEmail("");
+ });

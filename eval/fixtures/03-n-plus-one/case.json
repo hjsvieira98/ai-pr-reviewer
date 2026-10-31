@@ -1,0 +1,12 @@
+{
+  "id": "03-n-plus-one",
+  "title": "One query per user id",
+  "seeds": [
+    {
+      "id": "n-plus-one",
+      "file": "src/db/orders.ts",
+      "category": "performance",
+      "line": 6
+    }
+  ]
+}

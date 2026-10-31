@@ -1,0 +1,42 @@
+{
+  "name": "ai-pr-reviewer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Action that reviews pull requests with an LLM and posts inline comments.",
+  "author": "Humberto Vieira",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjsvieira98/ai-pr-reviewer.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "eval": "tsx eval/run-eval.ts",
+    "eval:ci": "tsx eval/run-eval.ts --mock"
+  },
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "minimatch": "^11.0.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^20.19.43",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^3.2.7"
+  }
+}

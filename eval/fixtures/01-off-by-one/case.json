@@ -1,0 +1,12 @@
+{
+  "id": "01-off-by-one",
+  "title": "Off-by-one when reading the last item",
+  "seeds": [
+    {
+      "id": "off-by-one",
+      "file": "src/utils/pagination.ts",
+      "category": "bug",
+      "line": 2
+    }
+  ]
+}

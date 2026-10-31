@@ -1,0 +1,13 @@
+{
+  "summary": "Whitespace collapsing looks optional.",
+  "findings": [
+    {
+      "file": "src/format/title.ts",
+      "line": 2,
+      "side": "RIGHT",
+      "severity": "low",
+      "category": "readability",
+      "suggestion": "This change is fine. The mock emits it so the harness can count a clean-diff false positive."
+    }
+  ]
+}

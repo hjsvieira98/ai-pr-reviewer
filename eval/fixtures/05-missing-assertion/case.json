@@ -1,0 +1,12 @@
+{
+  "id": "05-missing-assertion",
+  "title": "A test that calls the function and never asserts",
+  "seeds": [
+    {
+      "id": "missing-assertion",
+      "file": "tests/email.test.ts",
+      "category": "tests",
+      "line": 4
+    }
+  ]
+}

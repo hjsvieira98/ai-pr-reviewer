@@ -1,0 +1,13 @@
+{
+  "summary": "The new test never asserts.",
+  "findings": [
+    {
+      "file": "tests/email.test.ts",
+      "line": 4,
+      "side": "RIGHT",
+      "severity": "medium",
+      "category": "tests",
+      "suggestion": "Assert that validateEmail(\"\") rejects. A call without an assertion passes even when the function does nothing."
+    }
+  ]
+}

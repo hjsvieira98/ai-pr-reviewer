@@ -1,0 +1,60 @@
+name: AI PR Reviewer
+description: Review a pull request with an LLM and post inline comments plus a summary.
+author: Humberto Vieira
+
+branding:
+  icon: message-square
+  color: blue
+
+inputs:
+  provider:
+    description: "LLM provider: openai or anthropic"
+    required: true
+  model:
+    description: Model name for the selected provider
+    required: true
+  api-key:
+    description: API key for the provider. Store it as a secret.
+    required: true
+  max-files:
+    description: Maximum number of matching text files to send to the model
+    required: false
+    default: "20"
+  include:
+    description: Comma-separated glob patterns of files to review
+    required: false
+    default: "**/*"
+  exclude:
+    description: Comma-separated glob patterns of files to skip
+    required: false
+    default: "**/*.lock,**/package-lock.json,**/*.min.js,**/*.min.css,**/dist/**,**/node_modules/**,**/*.png,**/*.jpg,**/*.jpeg,**/*.gif,**/*.webp,**/*.ico,**/*.pdf"
+  severity-threshold:
+    description: "Minimum severity to comment on: low, medium, high, or critical"
+    required: false
+    default: "medium"
+  guidelines:
+    description: Optional path, inside the workspace, to a markdown file of extra review guidelines
+    required: false
+    default: ""
+  github-token:
+    description: Token used to read the pull request and post the review
+    required: true
+    default: ${{ github.token }}
+  max-input-tokens:
+    description: Approximate token budget for each model request. Estimated as characters divided by four.
+    required: false
+    default: "12000"
+  max-comments:
+    description: Maximum number of new inline comments to post
+    required: false
+    default: "15"
+
+outputs:
+  findings-count:
+    description: Number of new inline comments posted
+  reviewed-file-count:
+    description: Number of files sent to the model
+
+runs:
+  using: node20
+  main: dist/index.js
